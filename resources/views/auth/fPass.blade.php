@@ -68,7 +68,7 @@
                                         <p class="text-center small">Enter your email to return account</p>
                                     </div>
 
-                                    <form class="row g-3 needs-validation" novalidate>
+                                    <form class="row g-3 needs-validation" method="GET" action="{{ route('blog.index') }}" novalidate>
 
 
                                         <div class="col-12">

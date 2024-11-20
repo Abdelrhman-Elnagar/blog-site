@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,10 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::prefix('blog')->controller(BlogController::class)
+    ->group(function(){
+        Route::get('index','index')->name('blog.index');
+    });
 
 Route::prefix('auth')->controller(AuthController::class)
     ->group(function () {
