@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('auth')->controller(AuthController::class)
+    ->group(function () {
+        Route::get('login','login')->name('auth.login');
+        Route::get('reg','reg')->name('auth.reg');
+        Route::get('fPass','fPass')->name('auth.fPass');
+    });
