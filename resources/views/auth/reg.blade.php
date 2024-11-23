@@ -68,22 +68,31 @@
                                         <p class="text-center small">Enter your personal details to create account</p>
                                     </div>
 
-                                    <form class="row g-3 needs-validation" method="GET" action="{{ route('blog.index') }}"  novalidate>
+                                    <form class="row g-3 needs-validation" method="POST"
+                                        action="{{ route('auth.regPost') }}">
+                                        @csrf
                                         <div class="col-12">
                                             <label for="yourName" class="form-label">Your Name</label>
                                             <input type="text" name="name" class="form-control" id="yourName"
-                                                required>
+                                                value="{{ old('name') }}" required>
                                             <div class="invalid-feedback">Please, enter your name!</div>
+                                            @error('name')
+                                                <div><span class="alert alert danger">{{ $message }}</span></div>
+                                            @enderror
+                                            {{-- {{ $errors->first('name') }} --}}
                                         </div>
 
                                         <div class="col-12">
                                             <label for="yourEmail" class="form-label">Your Email</label>
                                             <input type="email" name="email" class="form-control" id="yourEmail"
-                                                required>
+                                                value="{{ old('email') }}" required>
                                             <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+                                            @error('email')
+                                                <div><span class="alert alert danger">{{ $message }}</span></div>
+                                            @enderror
                                         </div>
 
-                                        <div class="col-12">
+                                        {{-- <div class="col-12">
                                             <label for="yourUsername" class="form-label">Username</label>
                                             <div class="input-group has-validation">
                                                 <span class="input-group-text" id="inputGroupPrepend">@</span>
@@ -91,27 +100,34 @@
                                                     id="yourUsername" required>
                                                 <div class="invalid-feedback">Please choose a username.</div>
                                             </div>
-                                        </div>
+                                        </div> --}}
 
                                         <div class="col-12">
                                             <label for="yourPassword" class="form-label">Password</label>
                                             <input type="password" name="password" class="form-control"
-                                                id="yourPassword" required>
+                                                value="{{ old('password') }}" id="yourPassword" required>
                                             <div class="invalid-feedback">Please enter your password!</div>
+                                            @error('password')
+                                                <div><span class="alert alert danger">{{ $message }}</span></div>
+                                            @enderror
                                         </div>
 
                                         <div class="col-12">
                                             <div class="form-check">
                                                 <input class="form-check-input" name="terms" type="checkbox"
-                                                    value="" id="acceptTerms" required>
+                                                    id="acceptTerms" required>
                                                 <label class="form-check-label" for="acceptTerms">I agree and accept the
                                                     <a href="#">terms and conditions</a></label>
                                                 <div class="invalid-feedback">You must agree before submitting.</div>
+                                                @error('terms')
+                                                    <div><span class="alert alert danger">{{ $message }}</span></div>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <button class="btn btn-primary w-100" type="submit">Create Account</button>
                                         </div>
+                                        {{-- @dump($request) --}}
                                         <div class="col-12">
                                             <p class="small mb-0">Already have an account? <a
                                                     href={{ route('auth.login') }}>Log in</a></p>
@@ -142,17 +158,17 @@
             class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
-    <script src="{{ asset('admin/assets/vendor/apexcharts/apexcharts.min.js')}}"></script>
-    <script src="{{ asset('admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{ asset('admin/assets/vendor/chart.js/chart.umd.js')}}"></script>
-    <script src="{{ asset('admin/assets/vendor/echarts/echarts.min.js')}}"></script>
-    <script src="{{ asset('admin/assets/vendor/quill/quill.js')}}"></script>
-    <script src="{{ asset('admin/assets/vendor/simple-datatables/simple-datatables.js')}}"></script>
-    <script src="{{ asset('admin/assets/vendor/tinymce/tinymce.min.js')}}"></script>
-    <script src="{{ asset('admin/assets/vendor/php-email-form/validate.js')}}"></script>
+    <script src="{{ asset('admin/assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/vendor/chart.js/chart.umd.js') }}"></script>
+    <script src="{{ asset('admin/assets/vendor/echarts/echarts.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/vendor/quill/quill.js') }}"></script>
+    <script src="{{ asset('admin/assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
+    <script src="{{ asset('admin/assets/vendor/tinymce/tinymce.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/vendor/php-email-form/validate.js') }}"></script>
 
     <!-- Template Main JS File -->
-    <script src="{{ asset('admin/assets/js/main.js')}}"></script>
+    <script src="{{ asset('admin/assets/js/main.js') }}"></script>
 
 </body>
 

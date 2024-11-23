@@ -1,4 +1,8 @@
+@php
+    $pageTitle='index'
+@endphp
 @extends('website.layout.app')
+@section('title','Home')
 @section('content')
     <!-- Header Start -->
     <div class="container-fluid bg-primary px-0 px-md-5 mb-5">
@@ -17,7 +21,7 @@
                 <a href="" class="btn btn-secondary mt-1 py-3 px-5">Learn More</a>
             </div>
             <div class="col-lg-6 text-center text-lg-right">
-                <img class="img-fluid mt-5" src="{{ asset('website/img/header.png')}}" alt="" />
+                <img class="img-fluid mt-5" src="{{ asset('website/img/header.png') }}" alt="" />
             </div>
         </div>
     </div>
@@ -108,9 +112,9 @@
     <div class="container-fluid py-5">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-5">
-                    <img class="img-fluid rounded mb-5 mb-lg-0"website//about-1.jpg')}}" alt="" />
-                </div>
+                {{-- <div class="col-lg-5">
+                    <img class="img-fluid rounded mb-5 mb-lg-0" src="{{asset('website/img/about-1.jpg')}}" alt="" />
+                </div> --}}
                 <div class="col-lg-7">
                     <p class="section-title pr-5">
                         <span class="pr-2">Learn About Us</span>
@@ -124,7 +128,7 @@
                     </p>
                     <div class="row pt-2 pb-4">
                         <div class="col-6 col-md-4">
-                            <img class="img-fluid rounded"website//about-2.jpg')}}" alt="" />
+                            <img class="img-fluid rounded" src="{{  asset('website/img/about-2.jpg')}}" alt="" />
                         </div>
                         <div class="col-6 col-md-8">
                             <ul class="list-inline m-0">
@@ -162,7 +166,7 @@
             <div class="row">
                 <div class="col-lg-4 mb-5">
                     <div class="card border-0 bg-light shadow-sm pb-2">
-                        <img class="card-img-top mb-2"website class-1.jpg alt="" />
+                        <img class="card-img-top mb-2" src="{{  asset('website/img/class-1.jpg')}}" alt="" />
                         <div class="card-body text-center">
                             <h4 class="card-title">Drawing Class</h4>
                             <p class="card-text">
@@ -201,7 +205,7 @@
                 </div>
                 <div class="col-lg-4 mb-5">
                     <div class="card border-0 bg-light shadow-sm pb-2">
-                        <img class="card-img-top mb-2"website class-2.jpg alt="" />
+                        <img class="card-img-top mb-2" src="{{  asset('website/img/class-2.jpg')}}" alt="" />
                         <div class="card-body text-center">
                             <h4 class="card-title">Language Learning</h4>
                             <p class="card-text">
@@ -240,7 +244,7 @@
                 </div>
                 <div class="col-lg-4 mb-5">
                     <div class="card border-0 bg-light shadow-sm pb-2">
-                        <img class="card-img-top mb-2"website class-3.jpg alt="" />
+                        <img class="card-img-top mb-2" src="{{  asset('website/img/class-3.jpg')}}" alt="" />
                         <div class="card-body text-center">
                             <h4 class="card-title">Basic Science</h4>
                             <p class="card-text">
@@ -362,7 +366,7 @@
             <div class="row">
                 <div class="col-md-6 col-lg-3 text-center team mb-5">
                     <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%">
-                        <img class="img-fluid w-100"website//team-1.jpg')}}" alt="" />
+                        <img class="img-fluid w-100" src="{{ asset('website/img/team-1.jpg')}}" alt="" />
                         <div
                             class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
                             <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px"
@@ -378,7 +382,7 @@
                 </div>
                 <div class="col-md-6 col-lg-3 text-center team mb-5">
                     <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%">
-                        <img class="img-fluid w-100"website//team-2.jpg')}}" alt="" />
+                        <img class="img-fluid w-100" src="{{ asset('website/img/team-2.jpg')}}" alt="" />
                         <div
                             class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
                             <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px"
@@ -394,7 +398,7 @@
                 </div>
                 <div class="col-md-6 col-lg-3 text-center team mb-5">
                     <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%">
-                        <img class="img-fluid w-100"website//team-3.jpg')}}" alt="" />
+                        <img class="img-fluid w-100" src="{{ asset('website/img/team-3.jpg')}}" alt="" />
                         <div
                             class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
                             <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px"
@@ -410,7 +414,7 @@
                 </div>
                 <div class="col-md-6 col-lg-3 text-center team mb-5">
                     <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%">
-                        <img class="img-fluid w-100"website//team-4.jpg')}}" alt="" />
+                        <img class="img-fluid w-100" src="{{ asset('website/img/team-4.jpg')}}" alt="" />
                         <div
                             class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
                             <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px"
@@ -446,7 +450,7 @@
                         eirmod clita lorem. Dolor tempor ipsum clita
                     </div>
                     <div class="d-flex align-items-center">
-                        <img class="rounded-circle"website testimonial-1.jpg style="width: 70px; he')}}ight: 70px"
+                        <img class="rounded-circle" src="{{ asset('website/img/testimonial-1.jpg')}}" style="width: 70px; height: 70px"
                             alt="Image" />
                         <div class="pl-3">
                             <h5>Parent Name</h5>
@@ -461,7 +465,7 @@
                         eirmod clita lorem. Dolor tempor ipsum clita
                     </div>
                     <div class="d-flex align-items-center">
-                        <img class="rounded-circle"website testimonial-2.jpg style="width: 70px; he')}}ight: 70px"
+                        <img class="rounded-circle" src="{{ asset('website/img/testimonial-2.jpg')}}" style="width: 70px; height: 70px"
                             alt="Image" />
                         <div class="pl-3">
                             <h5>Parent Name</h5>
@@ -476,7 +480,7 @@
                         eirmod clita lorem. Dolor tempor ipsum clita
                     </div>
                     <div class="d-flex align-items-center">
-                        <img class="rounded-circle"website testimonial-3.jpg style="width: 70px; he')}}ight: 70px"
+                        <img class="rounded-circle" src="{{ asset('website/img/testimonial-3.jpg')}}" style="width: 70px; height: 70px"
                             alt="Image" />
                         <div class="pl-3">
                             <h5>Parent Name</h5>
@@ -491,7 +495,7 @@
                         eirmod clita lorem. Dolor tempor ipsum clita
                     </div>
                     <div class="d-flex align-items-center">
-                        <img class="rounded-circle"website testimonial-4.jpg style="width: 70px; he')}}ight: 70px"
+                        <img class="rounded-circle" src="{{ asset('website/img/testimonial-4.jpg')}}" style="width: 70px; height: 70px"
                             alt="Image" />
                         <div class="pl-3">
                             <h5>Parent Name</h5>
@@ -516,7 +520,7 @@
             <div class="row pb-3">
                 <div class="col-lg-4 mb-4">
                     <div class="card border-0 shadow-sm mb-2">
-                        <img class="card-img-top mb-2"website blog-1.jpg alt="" />
+                        <img class="card-img-top mb-2" src="{{ asset('website/img/blog-1.jpg') }}" alt="" />
                         <div class="card-body bg-light text-center p-4">
                             <h4 class="">Diam amet eos at no eos</h4>
                             <div class="d-flex justify-content-center mb-3">
@@ -535,7 +539,7 @@
                 </div>
                 <div class="col-lg-4 mb-4">
                     <div class="card border-0 shadow-sm mb-2">
-                        <img class="card-img-top mb-2"website blog-2.jpg alt="" />
+                        <img class="card-img-top mb-2" src="{{ asset('website/img/blog-2.jpg') }}" alt="" />
                         <div class="card-body bg-light text-center p-4">
                             <h4 class="">Diam amet eos at no eos</h4>
                             <div class="d-flex justify-content-center mb-3">
@@ -554,7 +558,7 @@
                 </div>
                 <div class="col-lg-4 mb-4">
                     <div class="card border-0 shadow-sm mb-2">
-                        <img class="card-img-top mb-2"website blog-3.jpg alt="" />
+                        <img class="card-img-top mb-2" src="{{ asset('website/img/blog-3.jpg') }}" alt="" />
                         <div class="card-body bg-light text-center p-4">
                             <h4 class="">Diam amet eos at no eos</h4>
                             <div class="d-flex justify-content-center mb-3">
@@ -575,4 +579,4 @@
         </div>
     </div>
     <!-- Blog End -->
-    @endsection
+@endsection

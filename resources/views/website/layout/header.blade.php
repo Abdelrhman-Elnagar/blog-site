@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Blog</title>
+    <title>@yield('title', 'Blog')</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
 
     <!-- Favicon -->
-    <link href="{{ asset('website/img/favicon.ico')}}" rel="icon" />
+    <link href="{{ asset('website/img/favicon.ico') }}" rel="icon" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -19,14 +19,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
 
     <!-- Flaticon Font -->
-    <link href="{{ asset('website/lib/flaticon/font/flaticon.css')}}" rel="stylesheet" />
+    <link href="{{ asset('website/lib/flaticon/font/flaticon.css') }}" rel="stylesheet" />
 
     <!-- Libraries Stylesheet -->
-    <link href="{{ asset('website/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet" />
-    <link href="{{ asset('website/lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet" />
+    <link href="{{ asset('website/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('website/lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{ asset('website/css/style.css')}}" rel="stylesheet" />
+    <link href="{{ asset('website/css/style.css') }}" rel="stylesheet" />
 </head>
 
 <body>
@@ -42,11 +42,11 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav font-weight-bold mx-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="class.html" class="nav-item nav-link">Classes</a>
-                    <a href="team.html" class="nav-item nav-link">Teachers</a>
-                    <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+                    <a href="{{ route('blog.index') }}" @class(['nav-item nav-link',' active' => $pageTitle == 'index'])>Home</a>
+                    <a href="{{ route('blog.about') }}" @class(['nav-item nav-link',' active' => $pageTitle == 'about'])>About</a>
+                    <a href="class.html" @class(['nav-item nav-link',' active' => $pageTitle == 'class'])>Classes</a>
+                    <a href="team.html" @class(['nav-item nav-link',' active' => $pageTitle == 'team'])>Teachers</a>
+                    <a href="gallery.html" @class(['nav-item nav-link',' active' => $pageTitle == 'gallery'])>Gallery</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu rounded-0 m-0">
@@ -54,9 +54,11 @@
                             <a href="single.html" class="dropdown-item">Blog Detail</a>
                         </div>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="contact.html" @class(['nav-item nav-link',' active' => $pageTitle == 'content'])>Contact</a>
                 </div>
-                <a href="{{route('auth.login')}}" class="btn btn-primary px-4">Join Class</a>
+                <a href="{{ route('auth.login') }}" class="btn btn-primary px-4">Login</a>
+                <a href="http://127.0.0.1:8000/auth/reg" class="btn btn-primary px-4"
+                    style="margin-left: 8px;">Register</a>
             </div>
         </nav>
     </div>
